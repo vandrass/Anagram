@@ -7,8 +7,7 @@ namespace Anagram
         static void Main(string[] args)
         {
             Anagram anagram = new Anagram();
-            string myString = null;
-            
+            string myString = null;            
 
 
             myString = Console.ReadLine();
