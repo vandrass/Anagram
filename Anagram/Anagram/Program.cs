@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Anagram
 {
@@ -10,6 +6,20 @@ namespace Anagram
     {
         static void Main(string[] args)
         {
+            Anagram anagram = new Anagram();
+            string myString = null;
+            
+
+
+            myString = Console.ReadLine();
+
+            Console.WriteLine(anagram.Revers(myString));
+
+            Console.ReadKey();
         }
+
+
+        
+
     }
 }
