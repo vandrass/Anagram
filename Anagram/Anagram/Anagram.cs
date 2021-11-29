@@ -1,15 +1,13 @@
-﻿using System;
-using System.Text;
+﻿
 
 namespace Anagram
 {
     public class Anagram
     {
 
-
-        public string Revers(string str)
+        public string Revers(string stringToRevers)
         {
-            string[] wordsToReverse = str.Split();
+            string[] wordsToReverse = stringToRevers.Split();
 
             for (int i = 0; i < wordsToReverse.Length; i++)
             {
@@ -19,15 +17,14 @@ namespace Anagram
             return string.Join(" ", wordsToReverse);
         }
 
-
-        private string ReverseWord(string word)
+        private string ReverseWord(string wordToReverse)
         {
-            int lastIndex = word.Length - 1;
-            char[] charsArray = new char[word.Length];
+            int lastIndex = wordToReverse.Length - 1;
+            char[] charsArray = new char[wordToReverse.Length];
 
-            for (int i = 0; i < word.Length; i++)
+            for (int i = 0; i < wordToReverse.Length; i++)
             {
-                charsArray[i] = word[lastIndex - i];
+                charsArray[i] = wordToReverse[lastIndex - i];
             }
 
             return new string(charsArray);
