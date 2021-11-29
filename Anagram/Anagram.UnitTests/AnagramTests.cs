@@ -95,5 +95,65 @@ namespace Anagram.UnitTests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Reverse_symHELLOsym_symOLLEHsym()
+        {
+            //Arrange
+            string wordToReverse = "1HELLO!";
+            string expected = "1OLLEH!";
+
+            //Act
+            var anagram = new Anagram();
+            var actual = anagram.Revers(wordToReverse);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Reverse_spaceSymHELLOsymSpace_spaceSymHELLOsymSpace()
+        {
+            //Arrange
+            string wordToReverse = " 1HELLO! ";
+            string expected = " 1OLLEH! ";
+
+            //Act
+            var anagram = new Anagram();
+            var actual = anagram.Revers(wordToReverse);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Reverse_HsymEsymLsymLsymOsym_OsymLsymLsymEsymHsym()
+        {
+            //Arrange
+            string wordToReverse = "H1E/L-L+O!";
+            string expected = "O1L/L-E+H!";
+
+            //Act
+            var anagram = new Anagram();
+            var actual = anagram.Revers(wordToReverse);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Reverse_symHelloSpaceHelloSym_symolleHSpaceolleHSym()
+        {
+            //Arrange
+            string wordToReverse = "1Hello Hello2";
+            string expected = "1olleH olleH2";
+
+            //Act
+            var anagram = new Anagram();
+            var actual = anagram.Revers(wordToReverse);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
