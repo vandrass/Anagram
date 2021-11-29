@@ -30,11 +30,13 @@ namespace Anagram
                     lastIndex++;
                 }
 
-                if(!IsAСharacter(wordToReverse[lastIndex - i]))
+                else if(!IsAСharacter(wordToReverse[lastIndex - i]))
                 {
-                    charsArray[lastIndex - 1] = wordToReverse[lastIndex - i];
+                    charsArray[lastIndex - 1] = wordToReverse[lastIndex - i];                    
+                    lastIndex--;
+                    i--;
                 }
-                else if(IsAСharacter(wordToReverse[i]) && IsAСharacter(wordToReverse[lastIndex - i]))
+                else
                 {
                     charsArray[i] = wordToReverse[lastIndex - i];
                 }
