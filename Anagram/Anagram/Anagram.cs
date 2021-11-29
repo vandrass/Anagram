@@ -24,10 +24,34 @@ namespace Anagram
 
             for (int i = 0; i < wordToReverse.Length; i++)
             {
-                charsArray[i] = wordToReverse[lastIndex - i];
+                if (!IsAСharacter(wordToReverse[i]))
+                {
+                    charsArray[i] = wordToReverse[i];
+                    lastIndex++;
+                }
+
+                if(!IsAСharacter(wordToReverse[lastIndex - i]))
+                {
+                    charsArray[lastIndex - 1] = wordToReverse[lastIndex - i];
+                }
+                else if(IsAСharacter(wordToReverse[i]) && IsAСharacter(wordToReverse[lastIndex - i]))
+                {
+                    charsArray[i] = wordToReverse[lastIndex - i];
+                }
+                
             }
 
             return new string(charsArray);
+        }
+
+        private bool IsAСharacter(char symbol)
+        {
+            if(char.IsLetter(symbol))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
     
