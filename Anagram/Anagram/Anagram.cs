@@ -1,10 +1,7 @@
-﻿
-
-namespace Anagram
+﻿namespace Anagram
 {
     public class Anagram
     {
-
         public string Revers(string stringToRevers)
         {
             if(stringToRevers == null)
@@ -29,13 +26,12 @@ namespace Anagram
 
             for (int i = 0; i < wordToReverse.Length; i++)
             {
-                if (!IsAСharacter(wordToReverse[i]))
+                if (!char.IsLetter(wordToReverse[i]))
                 {
                     charsArray[i] = wordToReverse[i];
                     lastIndex++;
                 }
-
-                else if(!IsAСharacter(wordToReverse[lastIndex - i]))
+                else if(!char.IsLetter(wordToReverse[lastIndex - i]))
                 {
                     charsArray[lastIndex - i] = wordToReverse[lastIndex - i];                    
                     lastIndex--;
@@ -44,22 +40,11 @@ namespace Anagram
                 else
                 {
                     charsArray[i] = wordToReverse[lastIndex - i];
-                }
-                
+                }                
             }
 
             return new string(charsArray);
         }
 
-        private bool IsAСharacter(char symbol)
-        {
-            if(char.IsLetter(symbol))
-            {
-                return true;
-            }
-
-            return false;
-        }
-    }
-    
+    }    
 }

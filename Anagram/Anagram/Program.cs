@@ -2,22 +2,16 @@
 
 namespace Anagram
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Anagram anagram = new Anagram();
-            string myString = null;
-
-            myString = Console.ReadLine();
+            string myString = Console.ReadLine();
 
             Console.WriteLine(anagram.Revers(myString));
 
             Console.ReadKey();
         }
-
-
-        
-
     }
 }
