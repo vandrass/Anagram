@@ -7,150 +7,195 @@ namespace Anagram.UnitTests
     public class AnagramTests
     {
         [TestMethod]
-        public void Reverse_Hello_olleH()
+        public void Reverse_InputOneWord_OneReversedWord()
         {
             //Arrange
-            string wordToReverse = "Hello";
+            string input = "Hello";
             string expected = "olleH";
 
             //Act
             var anagram = new Anagram();
-            var actual = anagram.Revers(wordToReverse);
+            var actual = anagram.Revers(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Reverse_emptyString_emptyString()
+        public void Reverse_EmptyString_EmptyString()
         {
             //Arrange
-            string wordToReverse = "";
+            string input = "";
             string expected = "";
 
             //Act
             var anagram = new Anagram();
-            var actual = anagram.Revers(wordToReverse);
+            var actual = anagram.Revers(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Reverse_HELLO_OLLEH()
+        public void Reverse_InputNull_EmptyString()
         {
             //Arrange
-            string wordToReverse = "HELLO";
-            string expected = "OLLEH";
+            string input = null;
+            string expected = "";
 
             //Act
             var anagram = new Anagram();
-            var actual = anagram.Revers(wordToReverse);
+            var actual = anagram.Revers(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Reverse_spaceHEllo_spaceolleH()
+        public void Reverse_InputWordWithSpaces_ReversedWordWithUnreversedSpaces()
         {
             //Arrange
-            string wordToReverse = " Hello";
-            string expected = " olleH";
+            string input = " HELLO ";
+            string expected = " OLLEH ";
 
             //Act
             var anagram = new Anagram();
-            var actual = anagram.Revers(wordToReverse);
+            var actual = anagram.Revers(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Reverse_spaceHEllospace_spaceolleHspace()
+        public void Reverse_InputWordWithDoubleSpaces_ReversedWordWithUnreversedDoubleSpaces()
         {
             //Arrange
-            string wordToReverse = " Hello ";
-            string expected = " olleH ";
+            string input = "  Hello  ";
+            string expected = "  olleH  ";
 
             //Act
             var anagram = new Anagram();
-            var actual = anagram.Revers(wordToReverse);
+            var actual = anagram.Revers(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Reverse_spaceSpaceSpace_spaceSpaceSpace()
+        public void Reverse_InputStringWithSpacesOnly_SameString()
         {
             //Arrange
-            string wordToReverse = "   ";
+            string input = "   ";
             string expected = "   ";
 
             //Act
             var anagram = new Anagram();
-            var actual = anagram.Revers(wordToReverse);
+            var actual = anagram.Revers(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Reverse_symHELLOsym_symOLLEHsym()
+        public void Reverse_InputStringWithTwoWords_TwoReversedWords()
         {
             //Arrange
-            string wordToReverse = "1HELLO!";
+            string input = "HELLO world";
+            string expected = "OLLEH dlrow";
+
+            //Act
+            var anagram = new Anagram();
+            var actual = anagram.Revers(input);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Reverse_InputStringWithThreeWords_ThreeReversedWords()
+        {
+            //Arrange
+            string input = "HELLO My world";
+            string expected = "OLLEH yM dlrow";
+
+            //Act
+            var anagram = new Anagram();
+            var actual = anagram.Revers(input);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Reverse_InputOneWordWithSymbolInTheEnd_ReversedWordUnreversedSymbol()
+        {
+            //Arrange
+            string input = "HELLO!";
+            string expected = "OLLEH!";
+
+            //Act
+            var anagram = new Anagram();
+            var actual = anagram.Revers(input);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Reverse_InputWordWithTwoSymbols_ReversedWordWithUnreversedSymbols()
+        {
+            //Arrange
+            string input = "1HELLO!";
             string expected = "1OLLEH!";
 
             //Act
             var anagram = new Anagram();
-            var actual = anagram.Revers(wordToReverse);
+            var actual = anagram.Revers(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Reverse_spaceSymHELLOsymSpace_spaceSymHELLOsymSpace()
+        public void Reverse_InputSymbolsStringOnly_UnaffectedString()
         {
             //Arrange
-            string wordToReverse = " 1HELLO! ";
-            string expected = " 1OLLEH! ";
+            string input = "12!*-+=";
+            string expected = "12!*-+=";
 
             //Act
             var anagram = new Anagram();
-            var actual = anagram.Revers(wordToReverse);
+            var actual = anagram.Revers(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Reverse_HsymEsymLsymLsymOsym_OsymLsymLsymEsymHsym()
+        public void Reverse_InputWordWithSymbolsAtTheEndsAndInTheMiddle_ReversedWordsAndUnreversedSymbols()
         {
             //Arrange
-            string wordToReverse = "H1E/L-L+O!";
-            string expected = "O1L/L-E+H!";
+            string input = "1He2llo3";
+            string expected = "1ol2leH3";
 
             //Act
             var anagram = new Anagram();
-            var actual = anagram.Revers(wordToReverse);
+            var actual = anagram.Revers(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Reverse_symHelloSpaceHelloSym_symolleHSpaceolleHSym()
+        public void Reverse_InputThreeWordWithSimbolsOnDifferntPlaces_ReversedWordsAndUnreversedSymbols()
         {
             //Arrange
-            string wordToReverse = "1Hello Hello2";
-            string expected = "1olleH olleH2";
+            string input =    "1He2llo M*y4 /wor123ld";
+            string expected = "1ol2leH y*M4 /dlr123ow";
 
             //Act
             var anagram = new Anagram();
-            var actual = anagram.Revers(wordToReverse);
+            var actual = anagram.Revers(input);
 
             //Assert
             Assert.AreEqual(expected, actual);

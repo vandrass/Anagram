@@ -7,6 +7,11 @@ namespace Anagram
 
         public string Revers(string stringToRevers)
         {
+            if(stringToRevers == null)
+            {
+                return "";
+            }
+
             string[] wordsToReverse = stringToRevers.Split();
 
             for (int i = 0; i < wordsToReverse.Length; i++)
@@ -32,7 +37,7 @@ namespace Anagram
 
                 else if(!IsAСharacter(wordToReverse[lastIndex - i]))
                 {
-                    charsArray[lastIndex - 1] = wordToReverse[lastIndex - i];                    
+                    charsArray[lastIndex - i] = wordToReverse[lastIndex - i];                    
                     lastIndex--;
                     i--;
                 }
