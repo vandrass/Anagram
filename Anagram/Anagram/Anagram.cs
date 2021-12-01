@@ -1,15 +1,15 @@
 ﻿namespace Anagram
 {
-    public class Anagram
-    {
-        public string Revers(string stringToRevers)
+    public class Anagram : IAnagram
+    {        
+        public string Reverse(string stringToReverse)
         {
-            if(stringToRevers == null)
+            if (stringToReverse == null)
             {
                 return "";
             }
 
-            string[] wordsToReverse = stringToRevers.Split();
+            string[] wordsToReverse = stringToReverse.Split();
 
             for (int i = 0; i < wordsToReverse.Length; i++)
             {

@@ -9,7 +9,7 @@ namespace Anagram
             Anagram anagram = new Anagram();
             string myString = Console.ReadLine();
 
-            Console.WriteLine(anagram.Revers(myString));
+            Console.WriteLine(anagram.Reverse(myString));
 
             Console.ReadKey();
         }
