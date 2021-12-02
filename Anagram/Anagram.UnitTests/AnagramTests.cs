@@ -1,12 +1,25 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Anagram.UnitTests
 {
     [TestClass]
     public class AnagramTests
     {
-        [TestMethod]
+
+        private  ServiceCollection _serviceCollection = new ServiceCollection();
+        private  ServiceProvider _provider;
+        private  IAnagram _service;
+
+    [TestInitialize]
+        public void TestInitialize()
+        {
+            _serviceCollection.AddScoped<IAnagram, Anagram>();
+            _provider = _serviceCollection.BuildServiceProvider();
+            _service = _provider.GetRequiredService<IAnagram>();
+        }
+
+    [TestMethod]
         public void Reverse_InputOneWord_OneReversedWord()
         {
             //Arrange
@@ -14,8 +27,8 @@ namespace Anagram.UnitTests
             const string expected = "olleH";
 
             //Act
-            var anagram = new Anagram();
-            var actual = anagram.Reverse(input);
+
+            var actual = _service.Reverse(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -29,8 +42,7 @@ namespace Anagram.UnitTests
             const string expected = "";
 
             //Act
-            var anagram = new Anagram();
-            var actual = anagram.Reverse(input);
+            var actual = _service.Reverse(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -44,8 +56,7 @@ namespace Anagram.UnitTests
             const string expected = "";
 
             //Act
-            var anagram = new Anagram();
-            var actual = anagram.Reverse(input);
+            var actual = _service.Reverse(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -59,8 +70,7 @@ namespace Anagram.UnitTests
             const string expected = " OLLEH ";
 
             //Act
-            var anagram = new Anagram();
-            var actual = anagram.Reverse(input);
+            var actual = _service.Reverse(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -74,8 +84,7 @@ namespace Anagram.UnitTests
             const string expected = "  olleH  ";
 
             //Act
-            var anagram = new Anagram();
-            var actual = anagram.Reverse(input);
+            var actual = _service.Reverse(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -89,8 +98,7 @@ namespace Anagram.UnitTests
             const string expected = "   ";
 
             //Act
-            var anagram = new Anagram();
-            var actual = anagram.Reverse(input);
+            var actual = _service.Reverse(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -104,8 +112,7 @@ namespace Anagram.UnitTests
             const string expected = "OLLEH dlrow";
 
             //Act
-            var anagram = new Anagram();
-            var actual = anagram.Reverse(input);
+            var actual = _service.Reverse(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -119,8 +126,7 @@ namespace Anagram.UnitTests
             const string expected = "OLLEH yM dlrow";
 
             //Act
-            var anagram = new Anagram();
-            var actual = anagram.Reverse(input);
+            var actual = _service.Reverse(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -134,8 +140,7 @@ namespace Anagram.UnitTests
             const string expected = "OLLEH!";
 
             //Act
-            var anagram = new Anagram();
-            var actual = anagram.Reverse(input);
+            var actual = _service.Reverse(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -149,8 +154,7 @@ namespace Anagram.UnitTests
             const string expected = "1OLLEH!";
 
             //Act
-            var anagram = new Anagram();
-            var actual = anagram.Reverse(input);
+            var actual = _service.Reverse(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -164,8 +168,7 @@ namespace Anagram.UnitTests
             const string expected = "12!*-+=";
 
             //Act
-            var anagram = new Anagram();
-            var actual = anagram.Reverse(input);
+            var actual = _service.Reverse(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -179,8 +182,7 @@ namespace Anagram.UnitTests
             const string expected = "1ol2leH3";
 
             //Act
-            var anagram = new Anagram();
-            var actual = anagram.Reverse(input);
+            var actual = _service.Reverse(input);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -194,8 +196,7 @@ namespace Anagram.UnitTests
             const string expected = "1ol2leH y*M4 /dlr123ow";
 
             //Act
-            var anagram = new Anagram();
-            var actual = anagram.Reverse(input);
+            var actual = _service.Reverse(input);
 
             //Assert
             Assert.AreEqual(expected, actual);

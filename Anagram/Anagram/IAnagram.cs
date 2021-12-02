@@ -1,6 +1,6 @@
 ﻿namespace Anagram
 {
-    interface IAnagram
+    public interface IAnagram
     {
         string Reverse(string stringToReverse);
     }
