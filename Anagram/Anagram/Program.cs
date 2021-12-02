@@ -1,15 +1,23 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Anagram
 {
     public class Program
     {
-        static void Main()
+        private static void Main()
         {
-            Anagram anagram = new Anagram();
             string myString = Console.ReadLine();
 
-            Console.WriteLine(anagram.Reverse(myString));
+            ServiceCollection serviceCollection = new ServiceCollection();
+
+            serviceCollection.AddScoped<IAnagram, Anagram>();
+
+            ServiceProvider provider = serviceCollection.BuildServiceProvider();
+
+            IAnagram service = provider.GetRequiredService<IAnagram>();
+
+            Console.WriteLine(service.Reverse(myString));
 
             Console.ReadKey();
         }
