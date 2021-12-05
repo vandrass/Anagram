@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Anagram
+namespace Anagram.ConsoleUI
 {
     public class Program
     {
