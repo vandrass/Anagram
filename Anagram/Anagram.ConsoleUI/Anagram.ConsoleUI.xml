@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Anagram.ConsoleUI</name>
+    </assembly>
+    <members>
+        <member name="T:Anagram.ConsoleUI.Program">
+            <summary>
+            Console App with ui for string input and reversed string output.
+            </summary>
+        </member>
+    </members>
+</doc>

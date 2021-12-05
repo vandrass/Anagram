@@ -1,6 +1,8 @@
-﻿// <copyright file="Anagram.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+﻿// -----------------------------------------------------------------------
+// <copyright file="Anagram.cs" company="Ivan Goncharov">
+// Copyright (c) Ivan Goncharov. All rights reserved.
 // </copyright>
+// -----------------------------------------------------------------------
 
 namespace Anagram
 {

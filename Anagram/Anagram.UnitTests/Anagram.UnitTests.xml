@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Anagram.UnitTests</name>
+    </assembly>
+    <members>
+        <member name="T:Anagram.UnitTests.AnagramTests">
+            <summary>
+            UnitTests for reversion Testing of angram class.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.TestInitialize">
+            <summary>
+            Method build service by Angram and IAnagram, for calling from tests.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.Reverse_InputOneWord_OneReversedWord">
+            <summary>
+            Test one word string on reversion.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.Reverse_EmptyString_EmptyString">
+            <summary>
+            Test empty string input, should be returned empty string.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.Reverse_InputNull_EmptyString">
+            <summary>
+            Test on null input, should be returned empty string.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.Reverse_InputWordWithSpaces_ReversedWordWithUnreversedSpaces">
+            <summary>
+            Test string with spaces at both ends, spaces should be stay put.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.Reverse_InputWordWithDoubleSpaces_ReversedWordWithUnreversedDoubleSpaces">
+            <summary>
+            Test string with double spaces at both ends, spaces should be stay put.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.Reverse_InputStringWithSpacesOnly_SameString">
+            <summary>
+            Test spaces string only, return without changes.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.Reverse_InputStringWithTwoWords_TwoReversedWords">
+            <summary>
+            Test two words string input, return string of two reversed words.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.Reverse_InputStringWithThreeWords_ThreeReversedWords">
+            <summary>
+            Test three words string input, return string of three reversed words.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.Reverse_InputOneWordWithSymbolInTheEnd_ReversedWordUnreversedSymbol">
+            <summary>
+            Test word with non-letter char on the end, non-letter char stay put and letters should be reversed.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.Reverse_InputWordWithTwoSymbols_ReversedWordWithUnreversedSymbols">
+            <summary>
+            Test word with non-letter char at the beggining and on the end, non-letter chars stay put and letters should be reversed.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.Reverse_InputSymbolsStringOnly_UnaffectedString">
+            <summary>
+            Test non-letter string only, should be without changes.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.Reverse_InputWordWithSymbolsAtTheEndsAndInTheMiddle_ReversedWordsAndUnreversedSymbols">
+            <summary>
+            Test string with non-letter chars on th ends of word and in the middle,
+            should be retirned string with reversed letters and non-letter chars stay put.
+            </summary>
+        </member>
+        <member name="M:Anagram.UnitTests.AnagramTests.Reverse_InputThreeWordWithSimbolsOnDifferntPlaces_ReversedWordsAndUnreversedSymbols">
+            <summary>
+            Test string of three words with non-letters chars on different places,
+            all non-letter chars stay put and letters chars should be revesed.
+            </summary>
+        </member>
+    </members>
+</doc>

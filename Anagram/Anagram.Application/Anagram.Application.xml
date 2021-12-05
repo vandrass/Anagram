@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Anagram.Application</name>
+    </assembly>
+    <members>
+        <member name="T:Anagram.Anagram">
+            <summary>
+            Class for input strings reversion.
+            </summary>
+        </member>
+        <member name="M:Anagram.Anagram.Reverse(System.String)">
+            <summary>
+            Method To reverse string letterse, non-letter characters stay put.
+            </summary>
+            <param name="stringToReverse">input string for reversion.</param>
+            <returns>reversed string.</returns>
+        </member>
+        <member name="T:Anagram.IAnagram">
+            <summary>
+            String Reversion Interface.
+            </summary>
+        </member>
+        <member name="M:Anagram.IAnagram.Reverse(System.String)">
+            <summary>
+            Reverse string.
+            </summary>
+            <param name="stringToReverse">string for reversion.</param>
+            <returns>reversed string.</returns>
+        </member>
+    </members>
+</doc>
