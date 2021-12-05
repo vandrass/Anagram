@@ -1,19 +1,23 @@
-﻿namespace Anagram
+﻿// <copyright file="Anagram.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace Anagram
 {
     public class Anagram : IAnagram
-    {        
+    {
         public string Reverse(string stringToReverse)
         {
             if (stringToReverse == null)
             {
-                return "";
+                return string.Empty;
             }
 
             string[] wordsToReverse = stringToReverse.Split();
 
             for (int i = 0; i < wordsToReverse.Length; i++)
             {
-                wordsToReverse[i] = ReverseWord(wordsToReverse[i]);
+                wordsToReverse[i] = this.ReverseWord(wordsToReverse[i]);
             }
 
             return string.Join(" ", wordsToReverse);
@@ -31,20 +35,19 @@
                     charsArray[i] = wordToReverse[i];
                     lastIndex++;
                 }
-                else if(!char.IsLetter(wordToReverse[lastIndex - i]))
+                else if (!char.IsLetter(wordToReverse[lastIndex - i]))
                 {
-                    charsArray[lastIndex - i] = wordToReverse[lastIndex - i];                    
+                    charsArray[lastIndex - i] = wordToReverse[lastIndex - i];
                     lastIndex--;
                     i--;
                 }
                 else
                 {
                     charsArray[i] = wordToReverse[lastIndex - i];
-                }                
+                }
             }
 
             return new string(charsArray);
         }
-
-    }    
+    }
 }
