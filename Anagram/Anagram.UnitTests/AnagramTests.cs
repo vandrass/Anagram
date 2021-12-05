@@ -7,6 +7,9 @@ namespace Anagram.UnitTests
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    /// <summary>
+    /// UnitTests for reversion Testing of angram class.
+    /// </summary>
     [TestClass]
     public class AnagramTests
     {
@@ -14,6 +17,9 @@ namespace Anagram.UnitTests
         private ServiceProvider provider;
         private IAnagram service;
 
+        /// <summary>
+        /// Method build service by Angram and IAnagram, for calling from tests.
+        /// </summary>
         [TestInitialize]
         public void TestInitialize()
         {
@@ -22,6 +28,9 @@ namespace Anagram.UnitTests
             this.service = this.provider.GetRequiredService<IAnagram>();
         }
 
+        /// <summary>
+        /// Test one word string on reversion.
+        /// </summary>
         [TestMethod]
         public void Reverse_InputOneWord_OneReversedWord()
         {
@@ -36,6 +45,9 @@ namespace Anagram.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Test empty string input, should be returned empty string.
+        /// </summary>
         [TestMethod]
         public void Reverse_EmptyString_EmptyString()
         {
@@ -50,6 +62,9 @@ namespace Anagram.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Test on null input, should be returned empty string.
+        /// </summary>
         [TestMethod]
         public void Reverse_InputNull_EmptyString()
         {
@@ -64,6 +79,9 @@ namespace Anagram.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Test string with spaces at both ends, spaces should be stay put.
+        /// </summary>
         [TestMethod]
         public void Reverse_InputWordWithSpaces_ReversedWordWithUnreversedSpaces()
         {
@@ -78,6 +96,9 @@ namespace Anagram.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Test string with double spaces at both ends, spaces should be stay put.
+        /// </summary>
         [TestMethod]
         public void Reverse_InputWordWithDoubleSpaces_ReversedWordWithUnreversedDoubleSpaces()
         {
@@ -92,6 +113,9 @@ namespace Anagram.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Test spaces string only, return without changes.
+        /// </summary>
         [TestMethod]
         public void Reverse_InputStringWithSpacesOnly_SameString()
         {
@@ -106,6 +130,9 @@ namespace Anagram.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Test two words string input, return string of two reversed words.
+        /// </summary>
         [TestMethod]
         public void Reverse_InputStringWithTwoWords_TwoReversedWords()
         {
@@ -120,6 +147,9 @@ namespace Anagram.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Test three words string input, return string of three reversed words.
+        /// </summary>
         [TestMethod]
         public void Reverse_InputStringWithThreeWords_ThreeReversedWords()
         {
@@ -134,6 +164,9 @@ namespace Anagram.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Test word with non-letter char on the end, non-letter char stay put and letters should be reversed.
+        /// </summary>
         [TestMethod]
         public void Reverse_InputOneWordWithSymbolInTheEnd_ReversedWordUnreversedSymbol()
         {
@@ -148,6 +181,9 @@ namespace Anagram.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Test word with non-letter char at the beggining and on the end, non-letter chars stay put and letters should be reversed.
+        /// </summary>
         [TestMethod]
         public void Reverse_InputWordWithTwoSymbols_ReversedWordWithUnreversedSymbols()
         {
@@ -162,6 +198,9 @@ namespace Anagram.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Test non-letter string only, should be without changes.
+        /// </summary>
         [TestMethod]
         public void Reverse_InputSymbolsStringOnly_UnaffectedString()
         {
@@ -176,6 +215,10 @@ namespace Anagram.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Test string with non-letter chars on th ends of word and in the middle,
+        /// should be retirned string with reversed letters and non-letter chars stay put.
+        /// </summary>
         [TestMethod]
         public void Reverse_InputWordWithSymbolsAtTheEndsAndInTheMiddle_ReversedWordsAndUnreversedSymbols()
         {
@@ -190,6 +233,10 @@ namespace Anagram.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Test string of three words with non-letters chars on different places,
+        /// all non-letter chars stay put and letters chars should be revesed.
+        /// </summary>
         [TestMethod]
         public void Reverse_InputThreeWordWithSimbolsOnDifferntPlaces_ReversedWordsAndUnreversedSymbols()
         {

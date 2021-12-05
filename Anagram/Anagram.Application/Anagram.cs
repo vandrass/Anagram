@@ -4,8 +4,16 @@
 
 namespace Anagram
 {
+    /// <summary>
+    /// Class for input strings reversion.
+    /// </summary>
     public class Anagram : IAnagram
     {
+        /// <summary>
+        /// Method To reverse string letterse, non-letter characters stay put.
+        /// </summary>
+        /// <param name="stringToReverse">input string for reversion.</param>
+        /// <returns>reversed string.</returns>
         public string Reverse(string stringToReverse)
         {
             if (stringToReverse == null)

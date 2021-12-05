@@ -7,6 +7,9 @@ namespace Anagram.ConsoleUI
     using System;
     using Microsoft.Extensions.DependencyInjection;
 
+    /// <summary>
+    /// Console App with ui for string input and reversed string output.
+    /// </summary>
     public class Program
     {
         private static void Main()
