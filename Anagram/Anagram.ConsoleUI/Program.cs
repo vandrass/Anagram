@@ -7,6 +7,7 @@
 namespace Anagram.ConsoleUI
 {
     using System;
+    using Anagram.Application;
     using Microsoft.Extensions.DependencyInjection;
 
     /// <summary>

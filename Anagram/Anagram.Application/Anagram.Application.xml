@@ -4,24 +4,24 @@
         <name>Anagram.Application</name>
     </assembly>
     <members>
-        <member name="T:Anagram.Anagram">
+        <member name="T:Anagram.Application.Anagram">
             <summary>
             Class for input strings reversion.
             </summary>
         </member>
-        <member name="M:Anagram.Anagram.Reverse(System.String)">
+        <member name="M:Anagram.Application.Anagram.Reverse(System.String)">
             <summary>
             Method To reverse string letterse, non-letter characters stay put.
             </summary>
             <param name="stringToReverse">input string for reversion.</param>
             <returns>reversed string.</returns>
         </member>
-        <member name="T:Anagram.IAnagram">
+        <member name="T:Anagram.Application.IAnagram">
             <summary>
             String Reversion Interface.
             </summary>
         </member>
-        <member name="M:Anagram.IAnagram.Reverse(System.String)">
+        <member name="M:Anagram.Application.IAnagram.Reverse(System.String)">
             <summary>
             Reverse string.
             </summary>

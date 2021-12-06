@@ -31,7 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Anagram.Application\Anagram.Application.csproj" />
     <ProjectReference Include="..\Anagram.ConsoleUI\Anagram.ConsoleUI.csproj" />
   </ItemGroup>
 

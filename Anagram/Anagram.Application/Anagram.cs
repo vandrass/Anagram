@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace Anagram
+namespace Anagram.Application
 {
     /// <summary>
     /// Class for input strings reversion.
@@ -27,7 +27,7 @@ namespace Anagram
 
             for (int i = 0; i < wordsToReverse.Length; i++)
             {
-                wordsToReverse[i] = this.ReverseWord(wordsToReverse[i]);
+                wordsToReverse[i] = ReverseWord(wordsToReverse[i]);
             }
 
             return string.Join(" ", wordsToReverse);

@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace Anagram
+namespace Anagram.Application
 {
     /// <summary>
     /// String Reversion Interface.
