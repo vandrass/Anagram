@@ -4,10 +4,13 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
     <RootNamespace>Anagram.Application</RootNamespace>
+    
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>E:\Study\Ivan\C#\Fixminded Projects\ConsoleApps\Anagram\Anagram.Application\Anagram.Application.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>..\StyleCop.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>

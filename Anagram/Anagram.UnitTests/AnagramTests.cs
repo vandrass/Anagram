@@ -2,6 +2,7 @@
 // <copyright file="AnagramTests.cs" company="Ivan Goncharov">
 // Copyright (c) Ivan Goncharov. All rights reserved.
 // </copyright>
+// <summary> Unit Tests of Angram Class.</summary>
 // -----------------------------------------------------------------------
 
 namespace Anagram.UnitTests
