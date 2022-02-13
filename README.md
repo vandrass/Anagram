@@ -1,4 +1,4 @@
 # Anagram
 
 Program for string reversing.
- Chars revers only, non char symbols stay withowt changes.
+ Chars revers only, not char symbols stay withowt changes.
